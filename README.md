@@ -1,16 +1,16 @@
 jquery-disablescroll
 ===
 
-Author: [Josh Harrison](http://www.joshharrison.net) at [Aloof](http://aloofdesign.com)
+Author: [Josh Harrison](http://www.joshharrison.net) at [Aloof](http://aloof.co)
 
-Disables scroll events from mousewheels, touchmoves and keypresses on a given scrollable element, typically `$(window)`.
+Disables scrolling from scrollbars, mousewheels, touchmoves and keypresses on a given scrollable element, typically `$(window)`.
 
 Use it while jQuery is animating the scroll position for a guaranteed super-smooth ride!
 
 
 Demo
 ---
-**http://jsfiddle.net/9L2WR/7/**
+**http://jsfiddle.net/5s01jg4s/**
 
 
 Example Usage
@@ -46,6 +46,7 @@ scrollEventKeys   | `[32, 33, 34, 35, 36, 37, 38, 39, 40]`     | Array of scroll
 
 Keycode Reference
 ---
+
 The following scroll-related keys are all included by default:
 
 Keycode    | Key
@@ -59,3 +60,25 @@ Keycode    | Key
 38         | Up Arrow
 39         | Right Arrow
 40         | Down Arrow
+
+
+Non-jQuery Usage
+---
+If you want to toy around with the object and its prototype, you can access it
+at `window.UserScrollDisabler`.
+
+Compatibility
+---
+Tested in:
+- Mac: Chrome 38
+- Mac: Firefox 33.1
+- Mac: Safari 7.1
+- Android: Chrome 38
+- iOS Safari: 8.1 and 7.1
+
+I am currently unable to test windows machines, so please perform your own
+testing if you require windows support.
+
+Known Issues
+---
+- Mac Safari is a bit flickery when dragging a disabled scrollbar.
