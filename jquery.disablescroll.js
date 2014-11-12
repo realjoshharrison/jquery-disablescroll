@@ -7,7 +7,7 @@
  */
 
 ;(function($) {
-	
+
 	"use strict";
 
 	var instance, proto;
@@ -97,5 +97,8 @@
 		}
 
 	};
+
+	// Global access
+	window.UserScrollDisabler = UserScrollDisabler;
 
 })(jQuery);
