@@ -5,7 +5,7 @@ Author: [Josh Harrison](http://www.joshharrison.net) at [Aloof](http://aloof.co)
 
 Disables scrolling from scrollbars, mousewheels, touchmoves and keypresses on a given scrollable element, typically `$(window)`.
 
-Use it while jQuery is animating the scroll position for a guaranteed super-smooth ride!
+Use it while jQuery is animating the scroll position for a super-smooth ride!
 
 
 Demo
@@ -73,12 +73,18 @@ Tested in:
 - Mac: Chrome 38
 - Mac: Firefox 33.1
 - Mac: Safari 7.1
+- Windows: IE 7-11
+- Windows: Chrome 38
+- Windows: Firefox 33.1
 - Android: Chrome 38
-- iOS Safari: 8.1 and 7.1
-
-I am currently unable to test windows machines, so please perform your own
-testing if you require windows support.
+- iOS 7.1 and 8.1: Safari
 
 Known Issues
 ---
-- Mac Safari is a bit flickery when dragging a disabled scrollbar.
+- Mac Safari 7.1 is a bit flickery when dragging a disabled scrollbar.
+- One report of IE flickering when dragging a disabled scrollbar, although I
+was unable to reproduce this.
+- Not sure if there is a workaround for these flickering issues, as scrolling by
+dragging the scrollbar does not trigger any cancellable events. This only leaves
+us with the option of setting the scroll position back to what it was before on
+every scroll event. I'm surprised this doesn't flicker in more browsers.
