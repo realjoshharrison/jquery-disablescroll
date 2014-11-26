@@ -95,6 +95,11 @@
             instance = new UserScrollDisabler(this, method);
         }
 
+        // Instance created, no method specified. Call disable again
+        if(instance && typeof method === "undefined") {
+            instance.disable();
+        }
+
         // Instance already created, and a method is being explicitly called,
         // e.g. .disablescroll('undo');
         else if(instance && instance[method]) {

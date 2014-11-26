@@ -10,7 +10,7 @@ Use it while jQuery is animating the scroll position for a super-smooth ride!
 
 Demo
 ---
-**http://jsfiddle.net/4a2r0vpx/**
+**http://jsfiddle.net/3n34qw6r/**
 
 
 Example Usage
