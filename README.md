@@ -10,7 +10,7 @@ Use it while jQuery is animating the scroll position for a super-smooth ride!
 
 Demo
 ---
-**http://jsfiddle.net/5s01jg4s/**
+**http://jsfiddle.net/4a2r0vpx/**
 
 
 Example Usage
@@ -18,12 +18,16 @@ Example Usage
 
     var $window = $(window);
 
-    // Disable user scrolling just before animating scrollTop
-    $window.disablescroll();
+    // Disable user scrolling just before animating scrollTop.
+    // Note that the `handleScrollbar` option must be false if you want to
+    // modify the scroll position whilst it is disabled.
+    $window.disablescroll({
+        handleScrollbar: false
+    });
 
     $("html, body").animate({ scrollTop: 500 }, "slow", function() {
 
-        // Enable user scrolling again, now that animated scrolling has completed
+        // Enable user scrolling again when animated scrolling completes
         $window.disablescroll("undo");
 
     });
@@ -34,13 +38,15 @@ Options
 
 Can be passed on first use:
 
-    $window.disablescroll({
+    $element.disablescroll({
         option : value
     });
 
 Option            | Default Value                              | Description
 :---------------- | :----------------------------------------- | :---------------------------------------------------------
-handleKeys        | `true`                                     | Boolean indicating whether to disable scroll events caused by keypresses, e.g. the down button.
+handleWheel       | `true`                                     | Boolean indicating whether to disable mouse wheels.
+handleScrollbar   | `true`                                     | Boolean indicating whether to disable scroll bar dragging. Set to `false` if you need to modify the scroll position whilst scrolling is disabled.
+handleKeys        | `true`                                     | Boolean indicating whether to disable scrolling triggered by keypresses, e.g. the down button.
 scrollEventKeys   | `[32, 33, 34, 35, 36, 37, 38, 39, 40]`     | Array of scroll-related keycodes to disable during scroll. See below for reference.
 
 

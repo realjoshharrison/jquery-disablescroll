@@ -16,6 +16,8 @@
         // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
         // left: 37, up: 38, right: 39, down: 40
         this.opts = $.extend({
+            handleWheel : true,
+            handleScrollbar: true,
             handleKeys : true,
             scrollEventKeys : [32, 33, 34, 35, 36, 37, 38, 39, 40]
         }, options);
@@ -32,19 +34,22 @@
     proto.disable = function() {
         var t = this;
 
-        t.lockToScrollPos = [
-            t.$container.scrollLeft(),
-            t.$container.scrollTop()
-        ];
-
-        t.$container.on(
-            "mousewheel.disablescroll DOMMouseScroll.disablescroll touchmove.disablescroll",
-            t._handleWheel
-        );
+        if(t.opts.handleWheel) {
+            t.$container.on(
+                "mousewheel.disablescroll DOMMouseScroll.disablescroll touchmove.disablescroll",
+                t._handleWheel
+            );
+        }
         
-        t.$container.on("scroll.disablescroll", function() {
-            t._handleScrollbar.call(t);
-        });
+        if(t.opts.handleScrollbar) {
+            t.lockToScrollPos = [
+                t.$container.scrollLeft(),
+                t.$container.scrollTop()
+            ];
+            t.$container.on("scroll.disablescroll", function() {
+                t._handleScrollbar.call(t);
+            });
+        }
 
         if(t.opts.handleKeys) {
             t.$document.on("keydown.disablescroll", function(event) {
