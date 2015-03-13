@@ -1,0 +1,25 @@
+{
+  "name": "jquery-disablescroll",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ultrapasty/jquery-disablescroll",
+  "authors": [
+    "Josh Harrison"
+  ],
+  "description": "Disables scroll events from mousewheels, touchmoves and keypresses.",
+  "main": "jquery.disablescroll.js",
+  "keywords": [
+    "scroll",
+    "scrolling",
+    "disable",
+    "interaction",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
