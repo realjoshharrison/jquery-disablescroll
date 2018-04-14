@@ -73,6 +73,8 @@ Non-jQuery Usage
 If you want to toy around with the object and its prototype, you can access it
 at `window.UserScrollDisabler`.
 
+Non-jQuery Angular port available at https://github.com/Skinner927/angular-disablescroll
+
 Compatibility
 ---
 Tested in:
