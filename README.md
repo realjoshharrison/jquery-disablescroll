@@ -1,6 +1,8 @@
 jquery-disablescroll
 ===
 
+**⚠️ No longer actively maintained**
+
 Author: [Josh Harrison](http://www.joshharrison.net) at [Aloof](http://aloof.co)
 
 Disables scrolling from scrollbars, mousewheels, touchmoves and keypresses on a given scrollable element, typically `$(window)`.
